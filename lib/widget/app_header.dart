@@ -4,12 +4,12 @@ import 'package:google_fonts/google_fonts.dart';
 
 class BalanceHeader extends StatelessWidget implements PreferredSizeWidget {
   final String userName;
-  final VoidCallback onBellPressed;
+  final VoidCallback? onBellPressed;
 
   const BalanceHeader({
     super.key,
     required this.userName,
-    required this.onBellPressed,
+    this.onBellPressed,
     TabBar? bottom,
   });
 

@@ -30,7 +30,7 @@ class _TaskScreenState extends State<TaskScreen> {
     Task(title: 'Clean ', isCompleted: true),
     Task(title: 'Clean room', isCompleted: true),
     Task(title: 'Clean room', isCompleted: true),
-    Task(title: 'Clean rroom', isCompleted: true),
+    Task(title: 'Clean room', isCompleted: true),
   ];
 
   get _filteredTasks =>

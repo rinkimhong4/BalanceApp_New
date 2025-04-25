@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mybalance/pages/balance.dart';
 import 'package:mybalance/pages/task.dart';
 import 'package:mybalance/pages/timer.dart';
-import 'package:mybalance/widget/bottom_navigation.dart'
-    show BottomNavigationWidget;
+import 'package:mybalance/widget/bottom_navigation.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
