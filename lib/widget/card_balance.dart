@@ -97,89 +97,85 @@ class _CardBalanceWidgetState extends State<CardBalanceWidget> {
   }
 
   get _buildBoyCard {
-    return CustomScrollView(
-      slivers: [
-        SliverToBoxAdapter(
-          child: Column(
-            children: [
-              Container(
-                padding: EdgeInsets.only(top: 14),
-                margin: EdgeInsets.all(16),
-                height: 120,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: List.generate(
-                    _titleBudget.length,
-                    (index) => BudgetSummaryCard(
-                      title: _titleBudget[index],
-                      icon: _iconBudget[index],
-                      amount: _dBudget[index],
-                      color: _colorBudget[index],
-                    ),
-                  ),
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          Container(
+            padding: EdgeInsets.only(top: 14),
+            margin: EdgeInsets.all(16),
+            height: 120,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: List.generate(
+                _titleBudget.length,
+                (index) => BudgetSummaryCard(
+                  title: _titleBudget[index],
+                  icon: _iconBudget[index],
+                  amount: _dBudget[index],
+                  color: _colorBudget[index],
                 ),
               ),
-              Row(
-                children: [
-                  Padding(padding: EdgeInsets.all(8)),
-                  Text(
-                    'Recent transactions',
-                    style: GoogleFonts.inter(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black,
-                    ),
-                  ),
-                ],
-              ),
-              DefaultTabController(
-                length: 3,
-                child: Column(
-                  children: [
-                    TabBar(
-                      labelStyle: TextStyle(fontSize: 16),
-                      indicatorColor: Color.fromARGB(255, 116, 107, 215),
-                      indicatorSize: TabBarIndicatorSize.tab,
-                      labelColor: Color(0xFF3629B7),
-                      unselectedLabelColor: Colors.black54,
-                      tabs: [
-                        TabItem(label: 'All'),
-                        TabItem(label: 'Income'),
-                        TabItem(label: 'Expense'),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 400, // Set a fixed height for the TabBarView
-                      child: TabBarView(
-                        children: [
-                          TransactionList(
-                            transactions: _transactions,
-                            incomeColor: const Color(0xFF05a56a),
-                            expenseColor: Colors.red,
-                            transactionType: 'All',
-                          ),
-                          TransactionList(
-                            transactions: _transactions,
-                            incomeColor: const Color(0xFF05a56a),
-                            expenseColor: Colors.red,
-                            transactionType: 'Income',
-                          ),
-                          TransactionList(
-                            transactions: _transactions,
-                            incomeColor: const Color(0xFF05a56a),
-                            expenseColor: Colors.red,
-                            transactionType: 'Expense',
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
+            ),
+          ),
+          Row(
+            children: [
+              Padding(padding: EdgeInsets.all(8)),
+              Text(
+                'Recent transactions',
+                style: GoogleFonts.inter(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black,
                 ),
               ),
             ],
           ),
-        ),
-      ],
+          DefaultTabController(
+            length: 3,
+            child: Column(
+              children: [
+                TabBar(
+                  labelStyle: TextStyle(fontSize: 16),
+                  indicatorColor: Color.fromARGB(255, 116, 107, 215),
+                  indicatorSize: TabBarIndicatorSize.tab,
+                  labelColor: Color(0xFF3629B7),
+                  unselectedLabelColor: Colors.black54,
+                  tabs: [
+                    TabItem(label: 'All'),
+                    TabItem(label: 'Income'),
+                    TabItem(label: 'Expense'),
+                  ],
+                ),
+                SizedBox(
+                  height: 400, // Set a fixed height for the TabBarView
+                  child: TabBarView(
+                    children: [
+                      TransactionList(
+                        transactions: _transactions,
+                        incomeColor: const Color(0xFF05a56a),
+                        expenseColor: Colors.red,
+                        transactionType: 'All',
+                      ),
+                      TransactionList(
+                        transactions: _transactions,
+                        incomeColor: const Color(0xFF05a56a),
+                        expenseColor: Colors.red,
+                        transactionType: 'Income',
+                      ),
+                      TransactionList(
+                        transactions: _transactions,
+                        incomeColor: const Color(0xFF05a56a),
+                        expenseColor: Colors.red,
+                        transactionType: 'Expense',
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
