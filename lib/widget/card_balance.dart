@@ -18,7 +18,7 @@ class _CardBalanceWidgetState extends State<CardBalanceWidget> {
     Icons.arrow_circle_down_sharp,
   ];
   final List _dBudget = ['\$5000.00', '-\$10'];
-  final List _colorBudget = [const Color(0xFF05a56a), Colors.red];
+  final List _colorBudget = [Color(0xFF3629B7), Colors.red];
 
   final List<Map<String, dynamic>> _transactions = [
     {
@@ -104,6 +104,10 @@ class _CardBalanceWidgetState extends State<CardBalanceWidget> {
             padding: EdgeInsets.only(top: 14),
             margin: EdgeInsets.all(16),
             height: 120,
+            // decoration: BoxDecoration(
+            //   color: Color(0xFF3629B7),
+            //   borderRadius: BorderRadius.circular(20),
+            // ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: List.generate(
@@ -147,12 +151,12 @@ class _CardBalanceWidgetState extends State<CardBalanceWidget> {
                   ],
                 ),
                 SizedBox(
-                  height: 400, // Set a fixed height for the TabBarView
+                  height: 400,
                   child: TabBarView(
                     children: [
                       TransactionList(
                         transactions: _transactions,
-                        incomeColor: const Color(0xFF05a56a),
+                        incomeColor: Color(0xFF3629B7),
                         expenseColor: Colors.red,
                         transactionType: 'All',
                       ),

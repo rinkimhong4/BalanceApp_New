@@ -18,7 +18,7 @@ class BudgetSummaryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: EdgeInsets.all(16),
       width: 150,
       decoration: BoxDecoration(
         color: color.withAlpha(20),
